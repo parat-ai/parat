@@ -1,0 +1,55 @@
+# manifest.yaml — Documentation Governance Manifest (schemaVersion 2)
+#
+# The doc-governance-guard hook enforces that new documentation files
+# are pre-registered in the catalog before creation.
+# Edits to existing documents are ALWAYS allowed regardless of this manifest.
+
+schemaVersion: 2
+status: active
+updated_at_utc: '2026-03-18T21:34:23.000Z'
+
+scope:
+  root: .
+  inclusion_policy:
+  - '*.md'
+  - '*.markdown'
+  - '*.txt'
+
+# Directories where governance does not apply.
+ignored_directories:
+- path: .git/**
+  why_ignored: Version-control metadata; not project documentation.
+- path: '**/node_modules/**'
+  why_ignored: Third-party package documentation; not project-authored docs.
+
+summary:
+  catalog_entries: 2
+  ignored_directory_count: 2
+
+# Pre-registered documents.
+# Every new documentation file must have an entry here BEFORE creation.
+#
+# Field reference:
+#   path             - Relative path from project root
+#   title            - Human-readable document title
+#   type             - canonical | reference | source-local | governance | index
+#   status           - active | draft | deprecated | reference
+#   owner            - team | writer | individual name
+#   line_count       - Current line count (0 for new docs)
+#   creation_reason  - Clear justification for why this document must exist
+catalog:
+  - path: README.md
+    title: "Parat Project Overview"
+    type: canonical
+    status: active
+    owner: team
+    line_count: 1
+    creation_reason: Top-level project introduction and entry point for new contributors.
+
+  - path: CLAUDE.md
+    title: "Claude Code Project Instructions"
+    type: governance
+    status: active
+    owner: team
+    line_count: 0
+    creation_reason: Claude Code convention file — defines roles, commands, and project structure for AI-assisted development sessions.
