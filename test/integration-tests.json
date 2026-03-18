@@ -1,9 +1,11 @@
-[
-  {
-    "name": "Migration Chain Integrity",
-    "description": "Validates FK dependency ordering, trigger function availability, and structural integrity of all 6 migration files",
-    "file": "/Users/nikolainarvestad/git/parat/worktrees/tkt-mmwlfujf-9ee1i/test/integration/migration-chain.test.ts",
-    "enabled": true,
-    "timeout": 30000
-  }
-]
+{
+  "tests": [
+    {
+      "name": "Migration Chain Integrity",
+      "description": "Validates FK dependency ordering, trigger function availability, and structural integrity of all 6 migration files",
+      "file": "/Users/nikolainarvestad/git/parat/worktrees/tkt-mmwlfujf-9ee1i/test/integration/migration-chain.test.ts",
+      "enabled": true,
+      "timeout": 30000
+    }
+  ]
+}
