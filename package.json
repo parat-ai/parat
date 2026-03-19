@@ -1,21 +1,36 @@
 {
-  "name": "tkt-mmwlfujf-9ee1i",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "parat",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "jest test/unit",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest test/unit && jest test/integration",
     "test:unit": "jest test/unit",
-    "test:integration": "jest test/integration"
+    "test:integration": "jest test/integration",
+    "test:all": "jest test/unit && jest test/integration"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "autoprefixer": "^10.4.21",
+    "next": "14.2.29",
+    "postcss": "^8.5.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwindcss": "^3.4.17"
+  },
   "devDependencies": {
     "@types/jest": "^30.0.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.29",
     "jest": "^30.3.0",
     "ts-jest": "^29.4.6",
-    "typescript": "^5.9.3"
+    "typescript": "^5"
   }
 }
