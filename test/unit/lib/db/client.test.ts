@@ -37,7 +37,7 @@ describe('createSupabaseClient', () => {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test-anon-key'
 
     expect(() => createSupabaseClient()).toThrow(
-      'NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are required'
+      'Missing Supabase env vars: NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are required'
     )
   })
 
@@ -46,7 +46,7 @@ describe('createSupabaseClient', () => {
     delete process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
     expect(() => createSupabaseClient()).toThrow(
-      'NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are required'
+      'Missing Supabase env vars: NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are required'
     )
   })
 
@@ -90,7 +90,7 @@ describe('createSupabaseAdminClient', () => {
     process.env.SUPABASE_SERVICE_ROLE_KEY = 'test-service-role-key'
 
     expect(() => createSupabaseAdminClient()).toThrow(
-      'NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required'
+      'Missing Supabase env vars: NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required'
     )
   })
 
@@ -99,7 +99,7 @@ describe('createSupabaseAdminClient', () => {
     delete process.env.SUPABASE_SERVICE_ROLE_KEY
 
     expect(() => createSupabaseAdminClient()).toThrow(
-      'NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required'
+      'Missing Supabase env vars: NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required'
     )
   })
 
