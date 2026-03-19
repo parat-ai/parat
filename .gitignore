@@ -56,3 +56,6 @@ temp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Claude session tracking (machine-specific)
+.claude-sessions.json
