@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Next.js Build",
+    "description": "Verifies npx next build exits 0 with no TypeScript errors",
+    "file": "/Users/nikolainarvestad/git/parat/worktrees/tkt-mmwlea5m-b5ygp/test/integration/build.test.ts",
+    "enabled": true,
+    "timeout": 120000
+  }
+]
