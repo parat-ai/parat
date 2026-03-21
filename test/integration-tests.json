@@ -1,6 +1,13 @@
 {
   "tests": [
     {
+      "name": "Core Interface Files",
+      "description": "Verifies all 4 TypeScript interface files exist, contain no any types, and tsc --noEmit exits 0",
+      "file": "/Users/nikolainarvestad/git/parat/parat/test/integration/core-interfaces.test.ts",
+      "enabled": true,
+      "timeout": 60000
+    },
+    {
       "name": "Migration Chain Integrity",
       "description": "Validates FK dependency ordering, trigger function availability, and structural integrity of all 6 migration files",
       "file": "/Users/nikolainarvestad/git/parat/worktrees/tkt-mmwlfujf-9ee1i/test/integration/migration-chain.test.ts",
