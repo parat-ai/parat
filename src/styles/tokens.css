@@ -1,0 +1,184 @@
+/* ==========================================================================
+   Parat Design Tokens
+   Structure:
+     Block 1 — :root HSL fallbacks + non-color tokens (all browsers)
+     Block 2 — @supports OKLCH overrides (OKLCH-capable browsers)
+     Block 3 — @media dark HSL overrides (dark mode, non-OKLCH browsers)
+     Block 4 — @media prefers-reduced-motion
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Block 1 — :root HSL fallbacks + all non-color tokens
+   All browsers receive these values. OKLCH-capable browsers get Block 2
+   overrides on top of these.
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Accent scale — muted teal */
+  --accent-100: hsl(168, 45%, 93%);
+  --accent-300: hsl(168, 38%, 68%);
+  --accent-500: hsl(168, 34%, 44%);
+  --accent-700: hsl(168, 30%, 30%);
+  --accent-900: hsl(168, 24%, 16%);
+
+  /* Surfaces — light mode */
+  --surface-page:   hsl(168, 18%, 97%);
+  --surface-card:   hsl(0, 0%, 100%);
+  --surface-subtle: hsl(168, 22%, 95%);
+  --surface-muted:  hsl(168, 15%, 90%);
+
+  /* Borders — light mode */
+  --border-subtle: hsl(168, 16%, 86%);
+  --border-medium: hsl(168, 14%, 78%);
+
+  /* Text — light mode */
+  --text-primary:   hsl(168, 14%, 17%);
+  --text-secondary: hsl(168, 10%, 43%);
+  --text-muted:     hsl(168, 8%, 61%);
+  --text-on-accent: hsl(168, 8%, 97%);
+
+  /* Signal colors */
+  --signal-success: hsl(142, 48%, 40%);
+  --signal-warning: hsl(38, 72%, 44%);
+  --signal-error:   hsl(4, 60%, 48%);
+  --signal-info:    hsl(168, 34%, 44%);
+
+  /* Font families — semantic aliases over Next.js font vars */
+  --font-display: var(--font-instrument-serif), Georgia, serif;
+  --font-body:    var(--font-dm-sans), system-ui, sans-serif;
+  --font-mono:    var(--font-dm-mono), 'Courier New', monospace;
+
+  /* Type scale — body/UI (fixed) */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+
+  /* Type scale — display (fluid) */
+  --text-2xl: clamp(1.5rem,   2.5vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 3.5vw, 2.375rem);
+  --text-4xl: clamp(2.25rem,  4.5vw, 3.0rem);
+  --text-5xl: clamp(2.75rem,  6.0vw, 3.75rem);
+
+  /* Spacing scale */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Motion durations */
+  --motion-instant: 100ms;
+  --motion-micro:   150ms;
+  --motion-reveal:  240ms;
+  --motion-page:    300ms;
+
+  /* Motion easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:  cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Block 2 — @supports OKLCH overrides
+   OKLCH-capable browsers override all color tokens with precise values.
+   Dark mode OKLCH overrides are nested here per spec.
+   -------------------------------------------------------------------------- */
+
+@supports (color: oklch(0% 0 0)) {
+  :root {
+    /* Accent scale */
+    --accent-100: oklch(94% 0.04 168);
+    --accent-300: oklch(75% 0.09 168);
+    --accent-500: oklch(56% 0.11 168);
+    --accent-700: oklch(40% 0.09 168);
+    --accent-900: oklch(24% 0.06 168);
+
+    /* Surfaces — light mode */
+    --surface-page:   oklch(98%  0.005 168);
+    --surface-card:   oklch(100% 0.000 168);
+    --surface-subtle: oklch(96%  0.008 168);
+    --surface-muted:  oklch(91%  0.010 168);
+
+    /* Borders — light mode */
+    --border-subtle: oklch(88% 0.012 168);
+    --border-medium: oklch(80% 0.014 168);
+
+    /* Text — light mode */
+    --text-primary:   oklch(18% 0.012 168);
+    --text-secondary: oklch(44% 0.010 168);
+    --text-muted:     oklch(62% 0.008 168);
+    --text-on-accent: oklch(98% 0.004 168);
+
+    /* Signal colors */
+    --signal-success: oklch(56% 0.14 145);
+    --signal-warning: oklch(68% 0.13  75);
+    --signal-error:   oklch(54% 0.16  25);
+    --signal-info:    oklch(56% 0.11 168);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Surfaces — dark mode */
+      --surface-page:   oklch(11% 0.010 168);
+      --surface-card:   oklch(14% 0.010 168);
+      --surface-subtle: oklch(18% 0.008 168);
+      --surface-muted:  oklch(22% 0.008 168);
+
+      /* Borders — dark mode */
+      --border-subtle: oklch(26% 0.008 168);
+      --border-medium: oklch(30% 0.008 168);
+
+      /* Text — dark mode */
+      --text-primary:   oklch(92% 0.006 168);
+      --text-secondary: oklch(62% 0.008 168);
+      --text-muted:     oklch(44% 0.006 168);
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Block 3 — @media dark HSL fallbacks
+   Non-OKLCH browsers in dark mode get these HSL overrides.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Surfaces — dark mode */
+    --surface-page:   hsl(168, 12%, 10%);
+    --surface-card:   hsl(168, 12%, 13%);
+    --surface-subtle: hsl(168, 8%, 17%);
+    --surface-muted:  hsl(168, 8%, 21%);
+
+    /* Borders — dark mode */
+    --border-subtle: hsl(168, 8%, 25%);
+    --border-medium: hsl(168, 8%, 29%);
+
+    /* Text — dark mode */
+    --text-primary:   hsl(168, 7%, 91%);
+    --text-secondary: hsl(168, 8%, 61%);
+    --text-muted:     hsl(168, 6%, 43%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Block 4 — @media prefers-reduced-motion
+   Collapse all animation and transition durations for users who prefer it.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
