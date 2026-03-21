@@ -1,6 +1,13 @@
 {
   "tests": [
     {
+      "name": "Core Interface Files",
+      "description": "Verifies all 4 TypeScript interface files exist, contain no any types, and tsc --noEmit exits 0",
+      "file": "/Users/nikolainarvestad/git/parat/parat/test/integration/core-interfaces.test.ts",
+      "enabled": true,
+      "timeout": 60000
+    },
+    {
       "name": "Next.js Build",
       "description": "Verifies npx next build exits 0 with no TypeScript errors",
       "file": "/Users/nikolainarvestad/git/parat/worktrees/tkt-mmwlea5m-b5ygp/test/integration/build.test.ts",
