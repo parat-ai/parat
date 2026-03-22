@@ -14,5 +14,12 @@
       "enabled": true,
       "timeout": 30000
     }
+    ,{
+      "name": "Design Tokens Pipeline Coherence",
+      "description": "Verifies tokens.css + globals.css form a consistent system: OKLCH/HSL fallback parity, dark mode coverage, import ordering",
+      "file": "/Users/nikolainarvestad/git/parat/worktrees/tkt-mmwlf4x3-ac4gr/test/integration/design-tokens-pipeline.test.ts",
+      "enabled": true,
+      "timeout": 30000
+    }
   ]
 }
